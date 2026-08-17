@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DERMA — znajdź pielęgnację dla swojej skóry</title>
+    <meta name="description" content="Minimalistyczna porównywarka kosmetyków. Odpowiedz na kilka pytań i znajdź pielęgnację dopasowaną do swojej skóry.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+    <style>
+*{margin:0;padding:0;box-sizing:border-box} :root{--bg:#f5f3ef;--surface:#fff;--surface-soft:#eeece7;--text:#1b1b19;--muted:#77756f;--line:#dedbd4;--accent:#9b8065;--accent-dark:#725b47;--serif:"Playfair Display",Georgia,serif;--sans:"DM Sans",Arial,sans-serif}html{scroll-behavior:smooth}body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.5}button,select{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}.navbar{height:80px;display:flex;align-items:center;justify-content:space-between;padding:0 6vw;border-bottom:1px solid var(--line);background:rgba(245,243,239,.9);backdrop-filter:blur(16px);position:sticky;top:0;z-index:100}.logo{font-size:25px;font-weight:700;letter-spacing:-1px}.logo span,.footer-logo span{color:var(--accent)}.navbar nav{display:flex;gap:34px}.navbar nav a{font-size:13px;color:#55534e;transition:.2s}.navbar nav a:hover{color:var(--text)}.nav-button{border:1px solid var(--text);background:transparent;padding:11px 18px;border-radius:50px;font-size:12px;transition:.2s}.nav-button:hover{background:var(--text);color:#fff}.hero{min-height:720px;padding:100px 8vw 80px;display:grid;grid-template-columns:1fr .9fr;align-items:center;gap:80px;overflow:hidden}.hero-content{max-width:650px}.eyebrow{display:flex;align-items:center;gap:9px;font-size:10px;letter-spacing:2px;font-weight:700;color:var(--muted);margin-bottom:28px}.eyebrow-dot{width:7px;height:7px;background:var(--accent);border-radius:50%}.hero h1{font-size:clamp(55px,7vw,95px);line-height:.94;letter-spacing:-5px;font-weight:600}.hero h1 em,h2 em{font-family:var(--serif);font-weight:500}.hero-content>p{max-width:510px;margin-top:32px;color:var(--muted);font-size:16px;line-height:1.8}.hero-actions{display:flex;align-items:center;gap:28px;margin-top:38px}.primary-button{border:none;background:var(--text);color:#fff;padding:17px 24px;border-radius:50px;display:flex;gap:20px;align-items:center;transition:.25s}.primary-button:hover{transform:translateY(-2px);background:var(--accent-dark)}.primary-button span{font-size:18px}.text-button{font-size:13px;border-bottom:1px solid var(--text);padding-bottom:3px}.hero-trust{margin-top:80px;display:flex;gap:55px}.hero-trust div{display:flex;flex-direction:column;gap:5px}.hero-trust strong{font-size:12px}.hero-trust span{font-size:11px;color:var(--muted)}.hero-visual{height:540px;position:relative}.organic-shape{position:absolute;border-radius:50%}.shape-one{width:430px;height:430px;background:#d8cfc2;top:35px;left:70px}.shape-two{width:170px;height:170px;background:#e5dcd0;bottom:30px;right:0}.product-showcase{position:absolute;inset:0;display:flex;justify-content:center;align-items:center;gap:30px;transform:rotate(-5deg)}.bottle{position:relative;border-radius:20px 20px 32px 32px;box-shadow:25px 35px 50px rgba(70,55,40,.14)}.bottle-main{width:175px;height:315px;background:#c8b9a5}.bottle-small{width:125px;height:235px;background:#e9e3da;margin-top:130px}.bottle-cap{position:absolute;top:-30px;left:50%;transform:translateX(-50%);width:75px;height:35px;border-radius:8px 8px 2px 2px;background:#272622}.bottle-small .bottle-cap{width:58px;height:28px;top:-24px}.bottle-label{position:absolute;left:16px;right:16px;top:95px;bottom:30px;border:1px solid rgba(40,35,30,.2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}.bottle-label small{font-size:8px;letter-spacing:2px}.bottle-label strong{font-size:18px;letter-spacing:2px}.bottle-label span{font-family:var(--serif);font-size:13px}.bottle-small .bottle-label{top:70px}.bottle-small .bottle-label strong{font-size:13px}.floating-card{position:absolute;bottom:60px;left:0;padding:15px 20px;background:rgba(255,255,255,.88);backdrop-filter:blur(15px);border:1px solid rgba(255,255,255,.7);border-radius:15px;display:flex;align-items:center;gap:12px;box-shadow:0 20px 50px rgba(0,0,0,.08)}.floating-icon{width:35px;height:35px;border-radius:50%;background:var(--surface-soft);display:grid;place-items:center}.floating-card strong{display:block;font-size:12px}.floating-card span{display:block;font-size:10px;color:var(--muted)}.finder-section,.products-section,.tips-section,.results-section{padding:120px 8vw}.finder-section,.results-section{background:var(--surface)}.section-heading{max-width:1200px;margin:0 auto 65px;display:flex;justify-content:space-between;align-items:end;gap:50px}.section-number{display:block;font-size:10px;letter-spacing:2px;font-weight:700;color:var(--accent);margin-bottom:18px}.section-heading h2,.results-header h2,.recommendation-heading h2{font-size:clamp(38px,5vw,64px);letter-spacing:-2.5px;line-height:1}.section-heading>p{max-width:300px;font-size:13px;color:var(--muted);line-height:1.8}.finder{max-width:1100px;margin:auto;border:1px solid var(--line);padding:45px;border-radius:25px;background:#faf9f6}.progress-wrapper{margin-bottom:65px}.progress-info{display:flex;justify-content:space-between;font-size:10px;color:var(--muted);margin-bottom:10px}.progress{height:3px;background:var(--line)}.progress-bar{width:25%;height:100%;background:var(--text);transition:width .3s}.quiz-step{display:none;animation:fadeUp .35s ease}.quiz-step.active{display:block}@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}.question-number{font-size:11px;color:var(--accent);font-weight:700}.quiz-step h3{font-size:32px;margin-top:10px;letter-spacing:-1px}.question-description{font-size:13px;color:var(--muted);margin-top:10px;max-width:600px}.option-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:35px}.option{min-height:135px;border:1px solid var(--line);background:#fff;border-radius:15px;text-align:left;padding:22px;display:flex;flex-direction:column;justify-content:space-between;transition:.2s}.option:hover{border-color:#aaa49a;transform:translateY(-2px)}.option.selected{background:var(--text);color:#fff;border-color:var(--text)}.option-icon{font-size:20px;color:var(--accent)}.option strong{font-size:14px}.option small{color:var(--muted);font-size:10px}.option.selected small{color:#c4c1ba}.priority-grid,.budget-options{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:35px}.priority,.budget{border:1px solid var(--line);background:#fff;padding:30px 20px;text-align:left;border-radius:15px;transition:.2s}.priority:hover,.budget:hover{transform:translateY(-2px)}.priority.selected,.budget.selected{background:var(--text);color:#fff}.priority strong,.budget strong{display:block;font-size:14px;margin-bottom:8px}.priority span,.budget span{color:var(--muted);font-size:10px}.priority.selected span,.budget.selected span{color:#c4c1ba}.quiz-navigation{margin-top:55px;display:flex;justify-content:space-between;align-items:center}.back-button{border:none;background:transparent;color:var(--muted)}.next-button{margin-left:auto;border:none;background:var(--text);color:#fff;padding:14px 25px;border-radius:50px}.hidden{visibility:hidden}.results-section{display:none}.results-section.visible{display:block;animation:fadeUp .5s}.results-header{max-width:1200px;margin:0 auto 60px;display:flex;justify-content:space-between;align-items:end}.results-header p{margin-top:18px;color:var(--muted);font-size:13px}.reset-button{background:transparent;border:1px solid var(--line);border-radius:50px;padding:11px 17px;font-size:11px}.routine{max-width:1200px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:18px}.routine-card{border:1px solid var(--line);padding:30px;border-radius:20px}.routine-header{display:flex;justify-content:space-between;align-items:start;padding-bottom:25px;border-bottom:1px solid var(--line)}.routine-header>div>span{color:var(--accent);font-size:9px;font-weight:700;letter-spacing:2px}.routine-header h3{margin-top:6px;font-size:21px}.routine-time{font-size:10px;color:var(--muted)}.routine-step{display:grid;grid-template-columns:35px 1fr auto;gap:15px;align-items:center;padding:20px 0;border-bottom:1px solid var(--line)}.routine-step:last-child{border-bottom:none}.routine-step-number{width:28px;height:28px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;font-size:9px}.routine-step strong{display:block;font-size:12px}.routine-step span{font-size:10px;color:var(--muted)}.routine-product-price{font-size:11px}.recommendation-section{max-width:1200px;margin:100px auto 0}.recommendation-heading{display:flex;justify-content:space-between;align-items:end;margin-bottom:35px}.sort-box{display:flex;align-items:center;gap:10px}.sort-box label{font-size:10px;color:var(--muted)}.sort-box select{border:none;background:transparent;font-size:11px;outline:none}.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.product-card{background:#faf9f6;border:1px solid var(--line);border-radius:18px;overflow:hidden;position:relative;transition:.25s}.product-card:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,.07)}.product-image{height:280px;background:#e8e3da;display:grid;place-items:center;position:relative}.product-bottle{width:85px;height:175px;border-radius:12px 12px 20px 20px;background:#d3c2af;position:relative;box-shadow:15px 20px 30px rgba(0,0,0,.1)}.product-bottle:before{content:"";position:absolute;width:35px;height:22px;background:#292824;top:-19px;left:25px;border-radius:5px 5px 1px 1px}.product-bottle:after{content:"DERMA";position:absolute;left:10px;right:10px;top:55px;padding:17px 5px;border:1px solid rgba(0,0,0,.15);font-size:7px;text-align:center;letter-spacing:2px}.match-badge{position:absolute;top:14px;left:14px;background:var(--text);color:#fff;padding:7px 10px;border-radius:30px;font-size:9px}.compare-button{position:absolute;right:14px;top:14px;width:32px;height:32px;border:none;background:rgba(255,255,255,.8);border-radius:50%;font-size:13px}.product-info{padding:22px}.product-category{font-size:9px;letter-spacing:1.5px;color:var(--accent);font-weight:700}.product-info h3{margin-top:7px;font-size:16px}.product-description{font-size:11px;color:var(--muted);line-height:1.6;margin:10px 0 16px}.product-meta{display:flex;justify-content:space-between;align-items:center}.product-price{font-size:13px;font-weight:700}.rating{font-size:10px;color:var(--accent)}.ingredients{display:flex;flex-wrap:wrap;gap:5px;margin-top:15px}.ingredient{background:var(--surface-soft);padding:5px 7px;border-radius:4px;font-size:8px;color:#666159}.filters{max-width:1200px;margin:0 auto 35px;display:flex;gap:8px;flex-wrap:wrap}.filter{border:1px solid var(--line);background:transparent;padding:9px 15px;border-radius:50px;font-size:10px}.filter.active,.filter:hover{background:var(--text);color:#fff;border-color:var(--text)}.advice-box{max-width:1200px;margin:70px auto 0;padding:30px;background:#ebe7df;border-radius:20px;display:flex;gap:20px;align-items:flex-start}.advice-icon{width:42px;height:42px;background:#fff;border-radius:50%;display:grid;place-items:center}.advice-box>div:last-child>span{font-size:9px;color:var(--accent-dark);letter-spacing:2px;font-weight:700}.advice-box h3{font-size:20px;margin:6px 0}.advice-box p{font-size:12px;color:var(--muted)}.tips-grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.tip-card{border-top:1px solid var(--text);padding-top:20px}.tip-card>span{font-size:10px;color:var(--accent)}.tip-card h3{font-size:21px;margin:25px 0 12px}.tip-card p{font-size:12px;line-height:1.8;color:var(--muted)}footer{padding:70px 8vw;border-top:1px solid var(--line);text-align:center}.footer-logo{font-size:30px;font-weight:700}footer p{font-family:var(--serif);font-size:17px;margin:12px 0 30px}footer small{font-size:9px;color:var(--muted)}.modal-overlay{position:fixed;inset:0;background:rgba(20,20,18,.55);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;z-index:500;padding:20px}.modal-overlay.active{display:flex}.compare-modal{width:min(900px,100%);max-height:90vh;overflow-y:auto;background:var(--surface);border-radius:25px;padding:45px;position:relative}.close-modal{position:absolute;right:25px;top:20px;border:none;background:none;font-size:28px}.compare-modal h2{font-size:35px;margin-bottom:35px}.compare-table{width:100%;border-collapse:collapse}.compare-table th,.compare-table td{border-bottom:1px solid var(--line);padding:15px 10px;text-align:left;font-size:12px}.compare-table th{color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:1px}@media(max-width:900px){.navbar nav{display:none}.hero{grid-template-columns:1fr;padding-top:70px}.hero-visual{height:430px}.option-grid{grid-template-columns:repeat(2,1fr)}.priority-grid,.budget-options{grid-template-columns:repeat(2,1fr)}.routine{grid-template-columns:1fr}.product-grid{grid-template-columns:repeat(2,1fr)}.tips-grid{grid-template-columns:1fr}}@media(max-width:600px){.navbar{padding:0 20px}.nav-button{display:none}.hero,.finder-section,.products-section,.tips-section,.results-section{padding:75px 20px}.hero h1{font-size:55px;letter-spacing:-3px}.hero-actions{flex-direction:column;align-items:flex-start}.hero-trust{gap:25px}.hero-visual{height:350px}.shape-one{width:300px;height:300px;left:20px}.bottle-main{width:130px;height:240px}.bottle-small{width:95px;height:180px;margin-top:80px}.section-heading,.results-header,.recommendation-heading{display:block}.section-heading>p{margin-top:20px}.finder{padding:25px}.option-grid,.priority-grid,.budget-options{grid-template-columns:1fr}.product-grid{grid-template-columns:1fr}.recommendation-heading .sort-box{margin-top:25px}.compare-modal{padding:30px 20px}}
+
+</style>
+</head>
+<body>
+<header class="navbar">
+    <a href="#" class="logo">derma<span>.</span></a>
+    <nav>
+        <a href="#finder">Znajdź pielęgnację</a>
+        <a href="#products">Kosmetyki</a>
+        <a href="#tips">Porady</a>
+    </nav>
+    <button class="nav-button" onclick="scrollToFinder()">Dopasuj pielęgnację</button>
+</header>
+
+<main>
+<section class="hero">
+    <div class="hero-content">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> PERSONALIZOWANA PIELĘGNACJA</div>
+        <h1>Twoja skóra.<br><em>Twoja rutyna.</em></h1>
+        <p>Nie musisz znać wszystkich składników. Powiedz nam, czego potrzebuje Twoja skóra, a dobierzemy kosmetyki, które mają dla Ciebie sens.</p>
+        <div class="hero-actions">
+            <button class="primary-button" onclick="scrollToFinder()">Znajdź moje kosmetyki <span>→</span></button>
+            <a href="#products" class="text-button">Zobacz kosmetyki</a>
+        </div>
+        <div class="hero-trust">
+            <div><strong>01</strong><span>Typ skóry</span></div>
+            <div><strong>02</strong><span>Problemy</span></div>
+            <div><strong>03</strong><span>Dopasowanie</span></div>
+        </div>
+    </div>
+    <div class="hero-visual">
+        <div class="organic-shape shape-one"></div>
+        <div class="organic-shape shape-two"></div>
+        <div class="product-showcase">
+            <div class="bottle bottle-main">
+                <div class="bottle-cap"></div>
+                <div class="bottle-label"><small>DERMA</small><strong>HYDRATE</strong><span>serum</span></div>
+            </div>
+            <div class="bottle bottle-small">
+                <div class="bottle-cap"></div>
+                <div class="bottle-label"><small>DERMA</small><strong>CALM</strong><span>cream</span></div>
+            </div>
+        </div>
+        <div class="floating-card"><div class="floating-icon">✦</div><div><strong>Dopasowane do Ciebie</strong><span>na podstawie Twoich odpowiedzi</span></div></div>
+    </div>
+</section>
+
+<section class="finder-section" id="finder">
+    <div class="section-heading">
+        <div><span class="section-number">01 / FINDER</span><h2>Poznajmy Twoją <em>skórę.</em></h2></div>
+        <p>Zajmie Ci to mniej niż minutę. Nie ma złych odpowiedzi.</p>
+    </div>
+
+    <div class="finder">
+        <div class="progress-wrapper">
+            <div class="progress-info"><span id="stepLabel">Krok 1 z 4</span><span id="progressPercent">25%</span></div>
+            <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+        </div>
+
+        <div class="quiz-step active" data-step="1">
+            <span class="question-number">01</span>
+            <h3>Jaki masz typ skóry?</h3>
+            <p class="question-description">Jeśli nie jesteś pewna, wybierz odpowiedź, która najlepiej opisuje Twoją skórę przez większość dnia.</p>
+            <div class="option-grid">
+                <button class="option" data-group="skinType" data-value="dry"><span class="option-icon">◌</span><strong>Sucha</strong><small>ściągnięta, łuszcząca się</small></button>
+                <button class="option" data-group="skinType" data-value="oily"><span class="option-icon">◉</span><strong>Tłusta</strong><small>mocno się świeci</small></button>
+                <button class="option" data-group="skinType" data-value="combination"><span class="option-icon">◍</span><strong>Mieszana</strong><small>tłusta strefa T, suche policzki</small></button>
+                <button class="option" data-group="skinType" data-value="normal"><span class="option-icon">○</span><strong>Normalna</strong><small>zbalansowana, bez większych problemów</small></button>
+                <button class="option" data-group="skinType" data-value="sensitive"><span class="option-icon">♡</span><strong>Wrażliwa</strong><small>łatwo reaguje zaczerwienieniem</small></button>
+            </div>
+        </div>
+
+        <div class="quiz-step" data-step="2">
+            <span class="question-number">02</span>
+            <h3>Z czym najbardziej się zmagasz?</h3>
+            <p class="question-description">Możesz wybrać kilka odpowiedzi.</p>
+            <div class="option-grid multi">
+                <button class="option" data-group="concerns" data-value="acne"><span class="option-icon">✦</span><strong>Trądzik</strong><small>wypryski i niedoskonałości</small></button>
+                <button class="option" data-group="concerns" data-value="blackheads"><span class="option-icon">◌</span><strong>Zaskórniki</strong><small>zapchane pory</small></button>
+                <button class="option" data-group="concerns" data-value="dryness"><span class="option-icon">⌁</span><strong>Odwodnienie</strong><small>suchość i uczucie ściągnięcia</small></button>
+                <button class="option" data-group="concerns" data-value="redness"><span class="option-icon">♡</span><strong>Zaczerwienienia</strong><small>reaktywność skóry</small></button>
+                <button class="option" data-group="concerns" data-value="aging"><span class="option-icon">✧</span><strong>Zmarszczki</strong><small>pierwsze oznaki starzenia</small></button>
+                <button class="option" data-group="concerns" data-value="pigmentation"><span class="option-icon">◐</span><strong>Przebarwienia</strong><small>nierówny koloryt</small></button>
+            </div>
+        </div>
+
+        <div class="quiz-step" data-step="3">
+            <span class="question-number">03</span>
+            <h3>Co jest dla Ciebie najważniejsze?</h3>
+            <p class="question-description">Wybierz maksymalnie dwa priorytety.</p>
+            <div class="priority-grid">
+                <button class="priority" data-value="simple"><strong>Prosta rutyna</strong><span>3–4 produkty</span></button>
+                <button class="priority" data-value="effective"><strong>Skuteczność</strong><span>składniki aktywne</span></button>
+                <button class="priority" data-value="budget"><strong>Dobry skład / cena</strong><span>bez przepłacania</span></button>
+                <button class="priority" data-value="premium"><strong>Premium</strong><span>mogę wydać więcej</span></button>
+            </div>
+        </div>
+
+        <div class="quiz-step" data-step="4">
+            <span class="question-number">04</span>
+            <h3>Ile chcesz wydać?</h3>
+            <p class="question-description">Orientacyjny budżet na jeden produkt.</p>
+            <div class="budget-options">
+                <button class="budget" data-value="low"><strong>do 40 zł</strong><span>budżetowo</span></button>
+                <button class="budget" data-value="medium"><strong>40–90 zł</strong><span>średnia półka</span></button>
+                <button class="budget" data-value="high"><strong>90–180 zł</strong><span>premium</span></button>
+                <button class="budget" data-value="any"><strong>Nie ma znaczenia</strong><span>liczy się efekt</span></button>
+            </div>
+        </div>
+
+        <div class="quiz-navigation">
+            <button class="back-button hidden" id="backButton" onclick="previousStep()">← Wstecz</button>
+            <button class="next-button" id="nextButton" onclick="nextStep()">Dalej →</button>
+        </div>
+    </div>
+</section>
+
+<section class="results-section" id="results">
+    <div class="results-header">
+        <div>
+            <span class="section-number">02 / YOUR ROUTINE</span>
+            <h2>Twoja pielęgnacja <em>gotowa.</em></h2>
+            <p id="resultDescription">Dopasowaliśmy produkty na podstawie Twoich odpowiedzi.</p>
+        </div>
+        <button class="reset-button" onclick="resetQuiz()">Zacznij od nowa</button>
+    </div>
+
+    <div class="routine">
+        <div class="routine-card">
+            <div class="routine-header"><div><span>RANO</span><h3>Minimalna ochrona</h3></div><span class="routine-time">3 kroki</span></div>
+            <div id="morningRoutine"></div>
+        </div>
+        <div class="routine-card">
+            <div class="routine-header"><div><span>WIECZÓR</span><h3>Regeneracja</h3></div><span class="routine-time">3 kroki</span></div>
+            <div id="eveningRoutine"></div>
+        </div>
+    </div>
+
+    <div class="recommendation-section">
+        <div class="recommendation-heading">
+            <div><span class="section-number">03 / RECOMMENDATIONS</span><h2>Produkty dla Ciebie</h2></div>
+            <div class="sort-box"><label for="sortProducts">Sortuj:</label><select id="sortProducts"><option value="match">Najlepiej dopasowane</option><option value="priceLow">Cena rosnąco</option><option value="priceHigh">Cena malejąco</option></select></div>
+        </div>
+        <div class="product-grid" id="recommendations"></div>
+    </div>
+
+    <div class="advice-box">
+        <div class="advice-icon">✦</div>
+        <div><span>MAŁA WSKAZÓWKA</span><h3 id="personalTip">Mniej produktów nie oznacza gorszej pielęgnacji.</h3><p id="personalTipText">Najważniejsze jest regularne stosowanie dobrze dobranych produktów.</p></div>
+    </div>
+</section>
+
+<section class="products-section" id="products">
+    <div class="section-heading">
+        <div><span class="section-number">04 / DATABASE</span><h2>Poznaj <em>kosmetyki.</em></h2></div>
+        <p>Porównuj składniki, przeznaczenie i ceny.</p>
+    </div>
+    <div class="filters">
+        <button class="filter active" data-filter="all">Wszystkie</button>
+        <button class="filter" data-filter="cleanser">Oczyszczanie</button>
+        <button class="filter" data-filter="serum">Serum</button>
+        <button class="filter" data-filter="cream">Kremy</button>
+        <button class="filter" data-filter="spf">SPF</button>
+    </div>
+    <div class="product-grid" id="allProducts"></div>
+</section>
+
+<section class="tips-section" id="tips">
+    <div class="section-heading">
+        <div><span class="section-number">05 / KNOWLEDGE</span><h2>Pielęgnacja bez <em>chaosu.</em></h2></div>
+        <p>Kilka prostych zasad, które warto znać.</p>
+    </div>
+    <div class="tips-grid">
+        <article class="tip-card"><span>01</span><h3>Nie potrzebujesz 10 produktów</h3><p>Dobrze dobrany cleanser, produkt nawilżający i SPF mogą być znacznie lepszą bazą niż rozbudowana rutyna.</p></article>
+        <article class="tip-card"><span>02</span><h3>Składnik ≠ automatycznie efekt</h3><p>Liczy się całe zestawienie składników, ich stężenie, formulacja oraz sposób używania produktu.</p></article>
+        <article class="tip-card"><span>03</span><h3>SPF to codzienny krok</h3><p>Ochrona przeciwsłoneczna jest szczególnie ważna, jeśli zależy Ci na ograniczeniu fotostarzenia i przebarwień.</p></article>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-logo">derma<span>.</span></div>
+    <p>Inteligentniejsza pielęgnacja. Mniej przypadkowych zakupów.</p>
+    <small>© 2026 DERMA. Narzędzie informacyjne, nie zastępuje konsultacji dermatologicznej.</small>
+</footer>
+</main>
+
+<div class="modal-overlay" id="compareModal">
+    <div class="compare-modal">
+        <button class="close-modal" onclick="closeCompare()">×</button>
+        <span class="section-number">PORÓWNAJ</span>
+        <h2>Porównanie produktów</h2>
+        <div id="compareContent"></div>
+    </div>
+</div>
+
+<script>
+const products=[
+{id:1,name:"Gentle Cloud Cleanser",category:"cleanser",categoryName:"OCZYSZCZANIE",price:39,rating:4.7,description:"Delikatny żel do codziennego oczyszczania bez uczucia ściągnięcia.",ingredients:["gliceryna","pantenol"],skinTypes:["dry","sensitive","normal","combination"],concerns:["dryness","redness"],priorities:["simple","budget"],budget:"low",morning:true,evening:true},
+{id:2,name:"Balance Gel",category:"cleanser",categoryName:"OCZYSZCZANIE",price:45,rating:4.8,description:"Lekki żel dla skóry mieszanej i tłustej ze skłonnością do niedoskonałości.",ingredients:["niacynamid","cynk"],skinTypes:["oily","combination"],concerns:["acne","blackheads"],priorities:["effective","budget"],budget:"low",morning:true,evening:true},
+{id:3,name:"Hydra Serum",category:"serum",categoryName:"SERUM",price:69,rating:4.9,description:"Serum wspierające nawilżenie i komfort odwodnionej skóry.",ingredients:["kwas hialuronowy","beta-glukan"],skinTypes:["dry","normal","combination","sensitive"],concerns:["dryness","redness"],priorities:["simple","effective"],budget:"medium",morning:true,evening:true},
+{id:4,name:"Clear Skin Serum",category:"serum",categoryName:"SERUM",price:59,rating:4.6,description:"Aktywne serum dla skóry z niedoskonałościami i zaskórnikami.",ingredients:["niacynamid","kwas salicylowy"],skinTypes:["oily","combination"],concerns:["acne","blackheads","pigmentation"],priorities:["effective"],budget:"medium",morning:false,evening:true},
+{id:5,name:"Calm Barrier Cream",category:"cream",categoryName:"KREM",price:74,rating:4.8,description:"Krem wspierający barierę skóry i redukujący uczucie dyskomfortu.",ingredients:["ceramidy","pantenol","skwalan"],skinTypes:["dry","sensitive","normal"],concerns:["dryness","redness"],priorities:["simple","effective"],budget:"medium",morning:true,evening:true},
+{id:6,name:"Light Balance Cream",category:"cream",categoryName:"KREM",price:54,rating:4.5,description:"Lekki krem dla skóry mieszanej i tłustej.",ingredients:["niacynamid","gliceryna"],skinTypes:["oily","combination","normal"],concerns:["acne","blackheads","dryness"],priorities:["simple","budget"],budget:"medium",morning:true,evening:true},
+{id:7,name:"Daily Shield SPF50",category:"spf",categoryName:"OCHRONA SPF",price:79,rating:4.9,description:"Lekki krem SPF50 do codziennej ochrony skóry.",ingredients:["filtry UV","witamina E"],skinTypes:["dry","oily","combination","normal","sensitive"],concerns:["pigmentation","aging","acne"],priorities:["simple","effective"],budget:"medium",morning:true,evening:false},
+{id:8,name:"Premium Repair Cream",category:"cream",categoryName:"KREM",price:149,rating:4.9,description:"Bogatsza formuła nastawiona na regenerację i komfort skóry.",ingredients:["ceramidy","peptydy","skwalan"],skinTypes:["dry","normal","sensitive"],concerns:["aging","dryness","redness"],priorities:["premium","effective"],budget:"high",morning:false,evening:true},
+{id:9,name:"Brightening Serum",category:"serum",categoryName:"SERUM",price:89,rating:4.7,description:"Serum ukierunkowane na nierówny koloryt i widoczność przebarwień.",ingredients:["witamina C","niacynamid"],skinTypes:["normal","combination","oily"],concerns:["pigmentation","aging"],priorities:["effective"],budget:"medium",morning:true,evening:false}
+];
+
+let currentStep=1;
+const answers={skinType:null,concerns:[],priorities:[],budget:null};
+const steps=document.querySelectorAll(".quiz-step");
+const nextButton=document.getElementById("nextButton");
+const backButton=document.getElementById("backButton");
+const progressBar=document.getElementById("progressBar");
+const stepLabel=document.getElementById("stepLabel");
+const progressPercent=document.getElementById("progressPercent");
+const resultsSection=document.getElementById("results");
+const recommendations=document.getElementById("recommendations");
+const allProducts=document.getElementById("allProducts");
+const sortProducts=document.getElementById("sortProducts");
+
+document.querySelectorAll(".option").forEach(option=>option.addEventListener("click",()=>{
+    const group=option.dataset.group,value=option.dataset.value;
+    if(group==="skinType"){
+        document.querySelectorAll('[data-group="skinType"]').forEach(item=>item.classList.remove("selected"));
+        option.classList.add("selected"); answers.skinType=value;
+    }else if(group==="concerns"){
+        option.classList.toggle("selected");
+        answers.concerns.includes(value)?answers.concerns=answers.concerns.filter(item=>item!==value):answers.concerns.push(value);
+    }
+}));
+
+document.querySelectorAll(".priority").forEach(button=>button.addEventListener("click",()=>{
+    const value=button.dataset.value;
+    if(button.classList.contains("selected")){
+        button.classList.remove("selected"); answers.priorities=answers.priorities.filter(item=>item!==value); return;
+    }
+    if(answers.priorities.length>=2)return;
+    button.classList.add("selected"); answers.priorities.push(value);
+}));
+
+document.querySelectorAll(".budget").forEach(button=>button.addEventListener("click",()=>{
+    document.querySelectorAll(".budget").forEach(item=>item.classList.remove("selected"));
+    button.classList.add("selected"); answers.budget=button.dataset.value;
+}));
+
+function nextStep(){
+    if(!validateStep()){showValidationMessage();return}
+    if(currentStep<4){currentStep++;updateStep()}else generateResults();
+}
+function validateStep(){
+    if(currentStep===1)return answers.skinType!==null;
+    if(currentStep===2)return answers.concerns.length>0;
+    if(currentStep===3)return answers.priorities.length>0;
+    if(currentStep===4)return answers.budget!==null;
+    return true;
+}
+function showValidationMessage(){
+    nextButton.style.transform="translateX(5px)";
+    setTimeout(()=>nextButton.style.transform="translateX(0)",100);
+    setTimeout(()=>nextButton.style.transform="translateX(-5px)",200);
+    setTimeout(()=>nextButton.style.transform="translateX(0)",300);
+}
+function updateStep(){
+    steps.forEach(step=>step.classList.toggle("active",Number(step.dataset.step)===currentStep));
+    const percent=currentStep*25;
+    progressBar.style.width=`${percent}%`; progressPercent.textContent=`${percent}%`; stepLabel.textContent=`Krok ${currentStep} z 4`;
+    currentStep===1?backButton.classList.add("hidden"):backButton.classList.remove("hidden");
+    nextButton.textContent=currentStep===4?"Pokaż moją pielęgnację →":"Dalej →";
+}
+function previousStep(){if(currentStep<=1)return;currentStep--;updateStep()}
+function calculateScore(product){
+    let score=0;
+    if(product.skinTypes.includes(answers.skinType))score+=35;
+    answers.concerns.forEach(c=>{if(product.concerns.includes(c))score+=12});
+    answers.priorities.forEach(p=>{if(product.priorities.includes(p))score+=8});
+    if(answers.budget==="any"||product.budget===answers.budget)score+=10;
+    if(product.morning||product.evening)score+=2;
+    return score;
+}
+function generateResults(){
+    const scored=products.map(p=>({...p,score:calculateScore(p)})).sort((a,b)=>b.score-a.score);
+    renderRecommendations(scored.slice(0,6)); renderRoutine(scored); renderPersonalTip();
+    resultsSection.classList.add("visible");
+    setTimeout(()=>resultsSection.scrollIntoView({behavior:"smooth"}),100);
+}
+function renderRecommendations(list){
+    recommendations.innerHTML="";
+    list.forEach(product=>recommendations.appendChild(createProductCard(product,true)));
+}
+function createProductCard(product,recommendation=false){
+    const card=document.createElement("article"); card.className="product-card";
+    const match=Math.min(99,Math.max(72,Math.round(product.score||80)));
+    card.innerHTML=`
+        <div class="product-image">
+            ${recommendation?`<span class="match-badge">${match}% dopasowania</span>`:""}
+            <button class="compare-button" onclick="openCompare(${product.id})" aria-label="Porównaj produkt">+</button>
+            <div class="product-bottle"></div>
+        </div>
+        <div class="product-info">
+            <span class="product-category">${product.categoryName}</span>
+            <h3>${product.name}</h3>
+            <p class="product-description">${product.description}</p>
+            <div class="product-meta"><span class="product-price">${product.price} zł</span><span class="rating">★ ${product.rating}</span></div>
+            <div class="ingredients">${product.ingredients.map(i=>`<span class="ingredient">${i}</span>`).join("")}</div>
+        </div>`;
+    return card;
+}
+function renderRoutine(scored){
+    const morning=chooseRoutineProducts(scored,"morning"), evening=chooseRoutineProducts(scored,"evening");
+    document.getElementById("morningRoutine").innerHTML=renderRoutineHTML(morning);
+    document.getElementById("eveningRoutine").innerHTML=renderRoutineHTML(evening);
+}
+function chooseRoutineProducts(list,time){
+    const selected=[],order=["cleanser","serum","cream","spf"];
+    order.forEach(category=>{
+        const product=list.find(item=>item.category===category&&item[time]&&!selected.some(s=>s.id===item.id));
+        if(product)selected.push(product);
+    });
+    return selected.slice(0,3);
+}
+function renderRoutineHTML(routine){
+    return routine.map((p,i)=>`<div class="routine-step"><div class="routine-step-number">${i+1}</div><div><strong>${p.name}</strong><span>${p.categoryName}</span></div><span class="routine-product-price">${p.price} zł</span></div>`).join("");
+}
+function renderPersonalTip(){
+    const title=document.getElementById("personalTip"),text=document.getElementById("personalTipText");
+    if(answers.skinType==="oily"){title.textContent="Tłusta skóra również potrzebuje nawilżenia.";text.textContent="Zamiast mocno przesuszać skórę, wybieraj lekkie formuły i łagodne oczyszczanie."}
+    else if(answers.skinType==="dry"){title.textContent="Skup się na odbudowie bariery.";text.textContent="Łagodne oczyszczanie, składniki nawilżające i lipidy mogą być lepszą bazą niż duża liczba aktywnych składników."}
+    else if(answers.skinType==="sensitive"){title.textContent="Im prostsza rutyna, tym łatwiej znaleźć winowajcę.";text.textContent="Wprowadzaj nowe produkty pojedynczo i obserwuj reakcję skóry."}
+    else{title.textContent="Regularność jest ważniejsza niż liczba produktów.";text.textContent="Dobrze dobrana, prosta rutyna stosowana konsekwentnie zwykle ma więcej sensu niż ciągłe zmienianie kosmetyków."}
+}
+function renderAllProducts(filter="all"){
+    allProducts.innerHTML="";
+    const visible=filter==="all"?products:products.filter(p=>p.category===filter);
+    visible.forEach(p=>allProducts.appendChild(createProductCard(p)));
+}
+renderAllProducts();
+
+document.querySelectorAll(".filter").forEach(button=>button.addEventListener("click",()=>{
+    document.querySelectorAll(".filter").forEach(i=>i.classList.remove("active"));
+    button.classList.add("active"); renderAllProducts(button.dataset.filter);
+}));
+sortProducts.addEventListener("change",()=>{
+    let sorted=products.map(p=>({...p,score:calculateScore(p)}));
+    if(sortProducts.value==="match")sorted.sort((a,b)=>b.score-a.score);
+    if(sortProducts.value==="priceLow")sorted.sort((a,b)=>a.price-b.price);
+    if(sortProducts.value==="priceHigh")sorted.sort((a,b)=>b.price-a.price);
+    renderRecommendations(sorted.slice(0,6));
+});
+function openCompare(productId){
+    const first=products.find(p=>p.id===productId);
+    const second=products.find(p=>p.id!==productId&&p.category===first.category);
+    const compare=[first,second].filter(Boolean);
+    document.getElementById("compareContent").innerHTML=`
+    <table class="compare-table"><thead><tr><th>Cecha</th>${compare.map(p=>`<th>${p.name}</th>`).join("")}</tr></thead><tbody>
+    <tr><td>Cena</td>${compare.map(p=>`<td>${p.price} zł</td>`).join("")}</tr>
+    <tr><td>Ocena</td>${compare.map(p=>`<td>★ ${p.rating}</td>`).join("")}</tr>
+    <tr><td>Kategoria</td>${compare.map(p=>`<td>${p.categoryName}</td>`).join("")}</tr>
+    <tr><td>Składniki</td>${compare.map(p=>`<td>${p.ingredients.join(", ")}</td>`).join("")}</tr>
+    <tr><td>Dla skóry</td>${compare.map(p=>`<td>${translateSkinTypes(p.skinTypes)}</td>`).join("")}</tr>
+    </tbody></table>`;
+    document.getElementById("compareModal").classList.add("active");
+}
+function closeCompare(){document.getElementById("compareModal").classList.remove("active")}
+function translateSkinTypes(types){
+    const t={dry:"sucha",oily:"tłusta",combination:"mieszana",normal:"normalna",sensitive:"wrażliwa"};
+    return types.map(x=>t[x]).join(", ");
+}
+document.getElementById("compareModal").addEventListener("click",e=>{if(e.target.id==="compareModal")closeCompare()});
+function resetQuiz(){
+    currentStep=1;answers.skinType=null;answers.concerns=[];answers.priorities=[];answers.budget=null;
+    document.querySelectorAll(".selected").forEach(i=>i.classList.remove("selected"));
+    resultsSection.classList.remove("visible");updateStep();
+    document.getElementById("finder").scrollIntoView({behavior:"smooth"});
+}
+function scrollToFinder(){document.getElementById("finder").scrollIntoView({behavior:"smooth"})}
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeCompare()});
+
+</script>
+</body>
+</html>
